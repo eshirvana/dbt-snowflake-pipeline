@@ -1,5 +1,5 @@
 select 
-    orders.
+    orders.*
 
 from {{ ref('stg_orders') }} orders
 join {{ ref('stg_lineitem') }} order_items 

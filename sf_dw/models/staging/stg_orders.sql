@@ -8,4 +8,4 @@ select
     , O_CLERK as clerk
     , O_SHIPPRIORITY as shipp_priority
     , O_COMMENT as comment 
-from {{ source( , 'ORDERS') }}
+from SNOWFLAKE_SAMPLE_DATA.tpch_sf100.orders

@@ -2,4 +2,4 @@ select
     r_regionkey as regionkey
     , r_name as regionname
     , r_comment as regioncomment
-from {{ source( , 'REGION') }}
+from SNOWFLAKE_SAMPLE_DATA.tpch_sf100.region
