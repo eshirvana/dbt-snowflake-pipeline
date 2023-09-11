@@ -7,4 +7,4 @@ select
     , C_ACCTBAL as accountbalance
     , C_MKTSEGMENT as marketsegment
     , C_COMMENT as comment 
-from SNOWFLAKE_SAMPLE_DATA.tpch_sf100.customer
+from {{ source('SNOWFLAKE_SAMPLE_DATA', 'customer') }}

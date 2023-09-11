@@ -1,7 +1,8 @@
 version: 2
 
 models:
-  - name: stg_customers
+  - name: stg_customer
+    description: This model conatins the staging tables 
     columns:
       - name: customerkey
         tests:
@@ -10,20 +11,20 @@ models:
 
   - name: stg_orders
     columns:
-      - name: order_id
+      - name: orderkey
         tests:
           - unique
           - not_null
-      - name: status
+      - name: order_status
         tests:
           - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
-      - name: customer_id
+              values: ['P', 'F', 'O']
+      - name: customerkey
         tests:
           - not_null
           - relationships:
               to: ref('stg_customers')
-              field: customer_id
+              field: customerkey
   - name: stg_nation
     columns:
       - name: nationkey
@@ -34,7 +35,6 @@ models:
     columns:
       - name: orderkey
         tests:
-          - unique
           - not_null
   - name: stg_region
     columns:

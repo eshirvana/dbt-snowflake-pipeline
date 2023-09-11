@@ -15,4 +15,4 @@ select
    , L_SHIPINSTRUCT as shipinstruction
    , L_SHIPMODE as ship_mode
    , L_COMMENT as comment 
-from SNOWFLAKE_SAMPLE_DATA.tpch_sf100.lineitem
+from {{ source('SNOWFLAKE_SAMPLE_DATA', 'lineitem') }}
